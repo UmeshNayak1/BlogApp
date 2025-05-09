@@ -1,0 +1,103 @@
+.blog-list {
+  padding: var(--spacing-xl) var(--spacing-md);
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.blog-list h1 {
+  margin-bottom: var(--spacing-2xl);
+  text-align: center;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+  padding: var(--spacing-md);
+}
+
+.post-card {
+  background: var(--color-background-light);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.post-title {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+.post-date {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-md);
+}
+
+.post-excerpt {
+  color: var(--color-text);
+  margin-bottom: var(--spacing-lg);
+}
+
+.read-more {
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: 500;
+  transition: transform var(--transition-fast);
+}
+
+.read-more:hover {
+  transform: translateX(5px);
+}
+
+.error-message {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  color: var(--color-error);
+  font-size: var(--font-size-lg);
+}
+
+.post-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+  margin: calc(var(--spacing-xl) * -1) calc(var(--spacing-xl) * -1) var(--spacing-md);
+}
+
+.post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.post-card:hover .post-image img {
+  transform: scale(1.05);
+}
+
+.post-content {
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .blog-list {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .post-card {
+    padding: var(--spacing-lg);
+  }
+
+  .posts-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}
